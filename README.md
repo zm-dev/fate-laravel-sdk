@@ -1,7 +1,7 @@
 # Fate sdk for laravel
 # 安装
 ```
-composer require ty666/cdn-pusher
+composer require zm-dev/fate-laravel-sdk
 ```
 将以下数组添加到 config/app.php 中 (laravel5.5+ 跳过此步骤)
 ```
