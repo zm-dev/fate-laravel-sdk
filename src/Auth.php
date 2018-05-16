@@ -7,18 +7,20 @@ use Illuminate\Http\Request;
 class Auth
 {
     private $config;
+    private $loginChecker;
 
-    public function __construct($config)
+    public function __construct($config, LoginChecker $loginChecker)
     {
         $this->config = $config;
+        $this->loginChecker = $loginChecker;
     }
 
     public function needLogin(Request $request)
     {
-        if (!$request->cookies->has('ticket_id')) {
+        if (!isset($_COOKIE['ticket_id'])) {
             return true;
         }
-        return app(LoginChecker::class)->check($request->cookies->get('ticket_id'));
+        return !$this->loginChecker->check($_COOKIE['ticket_id']);
     }
 
     public function login()
@@ -44,6 +46,8 @@ class Auth
 
     public function logout()
     {
-        //todo
+        if (isset($_COOKIE['ticket_id'])) {
+            $this->loginChecker->logout($_COOKIE['ticket_id']);
+        }
     }
 }

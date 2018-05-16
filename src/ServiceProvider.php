@@ -34,14 +34,14 @@ class ServiceProvider extends BaseServiceProvider
 
     public function registerAccessToken()
     {
-        $this->app->singleton(AccessToken::class, function () {
+        $this->app->bind(AccessToken::class, function () {
             return new AccessToken(config('fate'), cache()->driver());
         });
     }
 
     public function registerLoginChecker()
     {
-        $this->app->singleton(LoginChecker::class, function ($app) {
+        $this->app->bind(LoginChecker::class, function ($app) {
             return new LoginChecker($app->make(AccessToken::class), config('fate'));
         });
     }

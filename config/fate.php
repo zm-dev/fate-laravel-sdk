@@ -14,5 +14,6 @@ return [
         'logout' => '/fate/logout',
         'options' => []
     ],
-    'rpc_timeout' => 3,
+    // 单位：microseconds
+    'rpc_timeout' => 3 * 1000,
 ];

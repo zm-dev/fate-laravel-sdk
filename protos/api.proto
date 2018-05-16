@@ -29,6 +29,8 @@ service CertificateService {
 service LoginChecker {
     rpc check (TicketID) returns (LoginCheckRes) {
     }
+    rpc logout (TicketID) returns (Unused) {
+    }
 }
 
 service UserService {

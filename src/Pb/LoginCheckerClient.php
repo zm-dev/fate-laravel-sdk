@@ -29,4 +29,17 @@ class LoginCheckerClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \ZMDev\FateSDK\Pb\TicketID $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function logout(\ZMDev\FateSDK\Pb\TicketID $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/ZMDev.FateSDK.pb.LoginChecker/logout',
+        $argument,
+        ['\ZMDev\FateSDK\Pb\Unused', 'decode'],
+        $metadata, $options);
+    }
+
 }

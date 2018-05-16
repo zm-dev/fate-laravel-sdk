@@ -31,7 +31,9 @@ class AccessToken
             'app_secret' => $this->config['app_secret'],
         ], $this->config['rpc_timeout']);
 
-        $di = new \DateInterval('PT' . ($accessToken->getExpiredAt() - time() - 10) . 'S');
+        $ttl = $accessToken->getExpiredAt() - time() - 10;
+        $ttl = $ttl > 0 ? $ttl : 1;
+        $di = new \DateInterval('PT' . $ttl . 'S');
         $this->cache->set($this->cacheKey, $accessToken->getToken(), $di);
         return $accessToken->getToken();
     }
