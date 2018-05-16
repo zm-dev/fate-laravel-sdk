@@ -15,5 +15,5 @@ return [
         'options' => []
     ],
     // 单位：microseconds
-    'rpc_timeout' => 3 * 1000,
+    'rpc_timeout' => 3 * 1000 * 1000,
 ];
