@@ -40,7 +40,7 @@ class Auth
             'callback' => url()->previous(),
             'app_id' => $this->config['app_id']
         ]);
-        return redirect($this->config['url'] . '/login?' . $rawQuery);
+        return redirect($this->config['url'] . '/?' . $rawQuery);
     }
 
 
