@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace ZMDev\FateSDK\Pb;
+namespace ZMDev\Fate\Pb;
 
 /**
  */
@@ -17,67 +17,67 @@ class AppServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \ZMDev\FateSDK\Pb\AppListReq $argument input argument
+     * @param \ZMDev\Fate\Pb\AppListReq $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function List(\ZMDev\FateSDK\Pb\AppListReq $argument,
+    public function List(\ZMDev\Fate\Pb\AppListReq $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.FateSDK.pb.AppService/List',
+        return $this->_simpleRequest('/ZMDev.Fate.pb.AppService/List',
         $argument,
-        ['\ZMDev\FateSDK\Pb\AppList', 'decode'],
+        ['\ZMDev\Fate\Pb\AppList', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \ZMDev\FateSDK\Pb\AppID $argument input argument
+     * @param \ZMDev\Fate\Pb\AppID $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function Find(\ZMDev\FateSDK\Pb\AppID $argument,
+    public function Find(\ZMDev\Fate\Pb\AppID $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.FateSDK.pb.AppService/Find',
+        return $this->_simpleRequest('/ZMDev.Fate.pb.AppService/Find',
         $argument,
-        ['\ZMDev\FateSDK\Pb\Application', 'decode'],
+        ['\ZMDev\Fate\Pb\Application', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \ZMDev\FateSDK\Pb\Application $argument input argument
+     * @param \ZMDev\Fate\Pb\Application $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function Create(\ZMDev\FateSDK\Pb\Application $argument,
+    public function Create(\ZMDev\Fate\Pb\Application $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.FateSDK.pb.AppService/Create',
+        return $this->_simpleRequest('/ZMDev.Fate.pb.AppService/Create',
         $argument,
-        ['\ZMDev\FateSDK\Pb\Application', 'decode'],
+        ['\ZMDev\Fate\Pb\Application', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \ZMDev\FateSDK\Pb\Application $argument input argument
+     * @param \ZMDev\Fate\Pb\Application $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function Update(\ZMDev\FateSDK\Pb\Application $argument,
+    public function Update(\ZMDev\Fate\Pb\Application $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.FateSDK.pb.AppService/Update',
+        return $this->_simpleRequest('/ZMDev.Fate.pb.AppService/Update',
         $argument,
-        ['\ZMDev\FateSDK\Pb\Unused', 'decode'],
+        ['\ZMDev\Fate\Pb\Unused', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \ZMDev\FateSDK\Pb\AppID $argument input argument
+     * @param \ZMDev\Fate\Pb\AppID $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function Delete(\ZMDev\FateSDK\Pb\AppID $argument,
+    public function Delete(\ZMDev\Fate\Pb\AppID $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.FateSDK.pb.AppService/Delete',
+        return $this->_simpleRequest('/ZMDev.Fate.pb.AppService/Delete',
         $argument,
-        ['\ZMDev\FateSDK\Pb\Unused', 'decode'],
+        ['\ZMDev\Fate\Pb\Unused', 'decode'],
         $metadata, $options);
     }
 

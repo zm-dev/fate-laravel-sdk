@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace ZMDev\FateSDK\Pb;
+namespace ZMDev\Fate\Pb;
 
 /**
  */
@@ -18,15 +18,15 @@ class AccessTokenServiceClient extends \Grpc\BaseStub {
 
     /**
      * 获取 access token
-     * @param \ZMDev\FateSDK\Pb\Credential $argument input argument
+     * @param \ZMDev\Fate\Pb\Credential $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function Token(\ZMDev\FateSDK\Pb\Credential $argument,
+    public function Token(\ZMDev\Fate\Pb\Credential $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.FateSDK.pb.AccessTokenService/Token',
+        return $this->_simpleRequest('/ZMDev.Fate.pb.AccessTokenService/Token',
         $argument,
-        ['\ZMDev\FateSDK\Pb\AccessToken', 'decode'],
+        ['\ZMDev\Fate\Pb\AccessToken', 'decode'],
         $metadata, $options);
     }
 

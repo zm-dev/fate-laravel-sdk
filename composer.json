@@ -17,7 +17,8 @@
   "autoload": {
     "psr-4": {
       "ZMDev\\FateSDK\\": "src/",
-      "GPBMetadata\\": "GPBMetadata/"
+      "GPBMetadata\\": "GPBMetadata/",
+      "ZMDev\\Fate\\Pb\\": "Pb/"
     }
   },
   "require-dev": {

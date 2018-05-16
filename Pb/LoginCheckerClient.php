@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace ZMDev\FateSDK\Pb;
+namespace ZMDev\Fate\Pb;
 
 /**
  */
@@ -17,28 +17,28 @@ class LoginCheckerClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \ZMDev\FateSDK\Pb\TicketID $argument input argument
+     * @param \ZMDev\Fate\Pb\TicketID $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function check(\ZMDev\FateSDK\Pb\TicketID $argument,
+    public function check(\ZMDev\Fate\Pb\TicketID $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.FateSDK.pb.LoginChecker/check',
+        return $this->_simpleRequest('/ZMDev.Fate.pb.LoginChecker/check',
         $argument,
-        ['\ZMDev\FateSDK\Pb\LoginCheckRes', 'decode'],
+        ['\ZMDev\Fate\Pb\LoginCheckRes', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \ZMDev\FateSDK\Pb\TicketID $argument input argument
+     * @param \ZMDev\Fate\Pb\TicketID $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function logout(\ZMDev\FateSDK\Pb\TicketID $argument,
+    public function logout(\ZMDev\Fate\Pb\TicketID $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.FateSDK.pb.LoginChecker/logout',
+        return $this->_simpleRequest('/ZMDev.Fate.pb.LoginChecker/logout',
         $argument,
-        ['\ZMDev\FateSDK\Pb\Unused', 'decode'],
+        ['\ZMDev\Fate\Pb\Unused', 'decode'],
         $metadata, $options);
     }
 
