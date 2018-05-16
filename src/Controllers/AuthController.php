@@ -27,8 +27,8 @@ class AuthController
         $callback = $request->get('callback', function () {
             return config('app.url');
         });
-        $cookieTicketID = new Cookie(config('fate.ticket_id_cookie_key'), $ticketID, $expiredAt - 5);
-        $cookieUserID = new Cookie(config('fate.user_id_cookie_key'), $userID, $expiredAt - 5, '/', null, false, false);
+        $cookieTicketID = new Cookie(config('fate.ticket_id_cookie_key'), $ticketID, $expiredAt);
+        $cookieUserID = new Cookie(config('fate.user_id_cookie_key'), $userID, $expiredAt, '/', null, false, false);
         return (new RedirectResponse($callback))->withCookies([$cookieTicketID, $cookieUserID]);
     }
 
