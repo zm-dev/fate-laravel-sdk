@@ -11,7 +11,7 @@ class ServiceProvider extends BaseServiceProvider
     public function boot(Router $router)
     {
         $this->publishes([
-            __DIR__ . '../config/fate.php' => config_path('fate.php'),
+            __DIR__ . '/../config/fate.php' => config_path('fate.php'),
         ], 'config');
         $this->registerRoute($router);
     }
@@ -55,8 +55,8 @@ class ServiceProvider extends BaseServiceProvider
     {
         if (!$this->app->routesAreCached()) {
             $router->group(config('fate.route.options', []), function ($router) {
-                $router->get(config('fate.route.callback', '/fate/callback'), 'ZMDev\Fate\Controllers\AuthController@callback');
-                $router->get(config('fate.route.logout', '/fate/logout'), 'ZMDev\Fate\Controllers\AuthController@logout');
+                $router->get(config('fate.route.callback', '/fate/callback'), 'ZMDev\FateSDK\Controllers\AuthController@callback');
+                $router->get(config('fate.route.logout', '/fate/logout'), 'ZMDev\FateSDK\Controllers\AuthController@logout');
             });
         }
     }

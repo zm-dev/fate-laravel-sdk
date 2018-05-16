@@ -15,11 +15,10 @@ class Auth
 
     public function needLogin(Request $request)
     {
-        $ticketID = $request->cookie($this->config['ticket_id_cookie_key']);
-        if (is_null($ticketID)) {
+        if (!$request->cookies->has('ticket_id')) {
             return true;
         }
-        return app(LoginChecker::class)->check($ticketID);
+        return app(LoginChecker::class)->check($request->cookies->get('ticket_id'));
     }
 
     public function login()
