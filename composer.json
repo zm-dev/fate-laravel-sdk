@@ -1,5 +1,5 @@
 {
-  "name": "zm-dev/fate-sdk",
+  "name": "zm-dev/fate-laravel-sdk",
   "description": "fate sdk",
   "type": "library",
   "license": "MIT",
