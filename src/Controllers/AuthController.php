@@ -1,13 +1,13 @@
 <?php
 
-namespace ZMDev\Fate\Controllers;
+namespace ZMDev\FateSDK\Controllers;
 
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use ZMDev\Fate\Auth;
+use ZMDev\FateSDK\Auth;
 
 class AuthController
 {

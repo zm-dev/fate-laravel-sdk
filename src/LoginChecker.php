@@ -1,10 +1,10 @@
 <?php
 
-namespace ZMDev\Fate;
+namespace ZMDev\FateSDK;
 
-use ZMDev\Fate\Pb\LoginCheckerClient;
-use ZMDev\Fate\Pb\LoginCheckRes;
-use ZMDev\Fate\Pb\TicketID;
+use ZMDev\FateSDK\Pb\LoginCheckerClient;
+use ZMDev\FateSDK\Pb\LoginCheckRes;
+use ZMDev\FateSDK\Pb\TicketID;
 
 class LoginChecker
 {

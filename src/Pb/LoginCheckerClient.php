@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace ZMDev\Fate\Pb;
+namespace ZMDev\FateSDK\Pb;
 
 /**
  */
@@ -17,15 +17,15 @@ class LoginCheckerClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \ZMDev\Fate\Pb\TicketID $argument input argument
+     * @param \ZMDev\FateSDK\Pb\TicketID $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function check(\ZMDev\Fate\Pb\TicketID $argument,
+    public function check(\ZMDev\FateSDK\Pb\TicketID $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.fate.pb.LoginChecker/check',
+        return $this->_simpleRequest('/ZMDev.FateSDK.pb.LoginChecker/check',
         $argument,
-        ['\ZMDev\Fate\Pb\LoginCheckRes', 'decode'],
+        ['\ZMDev\FateSDK\Pb\LoginCheckRes', 'decode'],
         $metadata, $options);
     }
 

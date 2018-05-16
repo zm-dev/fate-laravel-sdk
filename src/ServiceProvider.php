@@ -1,6 +1,6 @@
 <?php
 
-namespace ZMDev\Fate;
+namespace ZMDev\FateSDK;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;

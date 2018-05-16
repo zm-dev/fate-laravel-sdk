@@ -1,10 +1,10 @@
 <?php
 
-namespace ZMDev\Fate;
+namespace ZMDev\FateSDK;
 
 use Psr\SimpleCache\CacheInterface;
-use ZMDev\Fate\Pb\AccessTokenServiceClient;
-use ZMDev\Fate\Pb\Credential;
+use ZMDev\FateSDK\Pb\AccessTokenServiceClient;
+use ZMDev\FateSDK\Pb\Credential;
 
 class AccessToken
 {

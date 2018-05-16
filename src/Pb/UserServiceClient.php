@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace ZMDev\Fate\Pb;
+namespace ZMDev\FateSDK\Pb;
 
 /**
  */
@@ -18,15 +18,15 @@ class UserServiceClient extends \Grpc\BaseStub {
 
     /**
      * todo update password
-     * @param \ZMDev\Fate\Pb\UserID $argument input argument
+     * @param \ZMDev\FateSDK\Pb\UserID $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function UpdatePassword(\ZMDev\Fate\Pb\UserID $argument,
+    public function UpdatePassword(\ZMDev\FateSDK\Pb\UserID $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.fate.pb.UserService/UpdatePassword',
+        return $this->_simpleRequest('/ZMDev.FateSDK.pb.UserService/UpdatePassword',
         $argument,
-        ['\ZMDev\Fate\Pb\Unused', 'decode'],
+        ['\ZMDev\FateSDK\Pb\Unused', 'decode'],
         $metadata, $options);
     }
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace ZMDev\Fate\Middleware;
+namespace ZMDev\FateSDK\Middleware;
 
-use ZMDev\Fate\Auth;
+use ZMDev\FateSDK\Auth;
 
 class FateBaseAuth
 {

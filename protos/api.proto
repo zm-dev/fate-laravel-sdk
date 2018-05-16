@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package ZMDev.fate.pb;
+package ZMDev.FateSDK.pb;
 
 service AccessTokenService {
     // 获取 access token

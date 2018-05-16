@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace ZMDev\Fate\Pb;
+namespace ZMDev\FateSDK\Pb;
 
 /**
  */
@@ -17,15 +17,15 @@ class CertificateServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \ZMDev\Fate\Pb\Certificate $argument input argument
+     * @param \ZMDev\FateSDK\Pb\Certificate $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function Update(\ZMDev\Fate\Pb\Certificate $argument,
+    public function Update(\ZMDev\FateSDK\Pb\Certificate $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.fate.pb.CertificateService/Update',
+        return $this->_simpleRequest('/ZMDev.FateSDK.pb.CertificateService/Update',
         $argument,
-        ['\ZMDev\Fate\Pb\Unused', 'decode'],
+        ['\ZMDev\FateSDK\Pb\Unused', 'decode'],
         $metadata, $options);
     }
 

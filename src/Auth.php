@@ -1,6 +1,6 @@
 <?php
 
-namespace ZMDev\Fate;
+namespace ZMDev\FateSDK;
 
 use Illuminate\Http\Request;
 
