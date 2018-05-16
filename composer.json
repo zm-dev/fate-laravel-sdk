@@ -1,32 +1,33 @@
 {
-    "name": "zm-dev/fate-sdk",
-    "description": "fate sdk",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "taoyu",
-            "email": "1255803549@qq.com"
-        }
-    ],
-    "require": {
-        "grpc/grpc": "^1.10",
-        "psr/simple-cache": "^1.0",
-        "google/protobuf": "^3.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "ZMDev\\FateSDK\\": "src/"
-        }
-    },
-    "require-dev": {
-        "laravel/framework": "^5.6"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "ZMDev\\FateSDK\\ServiceProvider"
-            ]
-        }
+  "name": "zm-dev/fate-sdk",
+  "description": "fate sdk",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "taoyu",
+      "email": "1255803549@qq.com"
     }
+  ],
+  "require": {
+    "grpc/grpc": "^1.10",
+    "psr/simple-cache": "^1.0",
+    "google/protobuf": "^3.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "ZMDev\\FateSDK\\": "src/",
+      "GPBMetadata\\": "GPBMetadata/"
+    }
+  },
+  "require-dev": {
+    "laravel/framework": "^5.6"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ZMDev\\FateSDK\\ServiceProvider"
+      ]
+    }
+  }
 }
