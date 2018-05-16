@@ -13,5 +13,6 @@ return [
         'callback' => '/fate/callback',
         'logout' => '/fate/logout',
         'options' => []
-    ]
+    ],
+    'rpc_timeout' => 3,
 ];

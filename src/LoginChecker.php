@@ -30,7 +30,7 @@ class LoginChecker
          */
         list($loginCheckRes, $status) = $loginCheckerClient->check($t, [
             $this->config['access_token_key'] => $token,
-        ])->wait();
+        ], ['timeout' => $this->config['rpc_timeout']])->wait();
         return $loginCheckRes->getIsLogin();
     }
 }
