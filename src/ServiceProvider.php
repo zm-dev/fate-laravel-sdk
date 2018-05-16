@@ -18,17 +18,17 @@ class ServiceProvider extends BaseServiceProvider
 
     public function register()
     {
-        $this->registerAuth();
-
         $this->registerAccessToken();
 
         $this->registerLoginChecker();
+
+        $this->registerAuth();
     }
 
     public function registerAuth()
     {
-        $this->app->singleton(Auth::class, function () {
-            return new Auth(config('fate'));
+        $this->app->singleton(Auth::class, function ($app) {
+            return new Auth(config('fate'), $app->make(LoginChecker::class));
         });
     }
 

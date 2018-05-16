@@ -15,7 +15,7 @@ class Auth
         $this->loginChecker = $loginChecker;
     }
 
-    public function needLogin(Request $request)
+    public function needLogin()
     {
         if (!isset($_COOKIE['ticket_id'])) {
             return true;
