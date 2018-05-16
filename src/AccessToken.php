@@ -3,6 +3,7 @@
 namespace ZMDev\FateSDK;
 
 use Psr\SimpleCache\CacheInterface;
+use ZMDev\FateSDK\Exceptions\FateException;
 use ZMDev\FateSDK\Pb\AccessTokenServiceClient;
 use ZMDev\FateSDK\Pb\Credential;
 
@@ -55,6 +56,9 @@ class AccessToken
         $c->setAppId($credential['app_id']);
         $c->setAppSecret($credential['app_secret']);
         list($accessToken, $status) = $accessTokenServiceClient->Token($c, [], ['timeout' => $rpcTimeout])->wait();
+        if ($status->code != 0) {
+            throw new FateException($status->details);
+        }
         return $accessToken;
     }
 }

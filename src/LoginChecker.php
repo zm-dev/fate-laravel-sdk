@@ -2,6 +2,7 @@
 
 namespace ZMDev\FateSDK;
 
+use ZMDev\FateSDK\Exceptions\FateException;
 use ZMDev\FateSDK\Pb\LoginCheckerClient;
 use ZMDev\FateSDK\Pb\LoginCheckRes;
 use ZMDev\FateSDK\Pb\TicketID;
@@ -32,6 +33,9 @@ class LoginChecker
         list($loginCheckRes, $status) = $this->client->check($t, [
             $this->config['access_token_key'] => [$token],
         ], ['timeout' => $this->config['rpc_timeout']])->wait();
+        if ($status->code != 0) {
+            throw new FateException($status->details);
+        }
         return $loginCheckRes->getIsLogin();
     }
 
@@ -43,7 +47,9 @@ class LoginChecker
         list($unused, $status) = $this->client->logout($t, [
             $this->config['access_token_key'] => [$token],
         ], ['timeout' => $this->config['rpc_timeout']])->wait();
-        dd($unused, $status);
+        if ($status->code != 0) {
+            throw new FateException($status->details);
+        }
     }
 }
 
