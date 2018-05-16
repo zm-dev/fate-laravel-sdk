@@ -17,8 +17,11 @@ class FateBaseAuth
      */
     public function handle($request, \Closure $next)
     {
+        /**
+         * @var Auth $auth
+         */
         $auth = app(Auth::class);
-        if ($auth->needLogin($request)) {
+        if ($auth->needLogin()) {
             return $auth->login();
         }
         return $next($request);

@@ -37,7 +37,7 @@ class Auth
     public function redirectToLogin()
     {
         $rawQuery = http_build_query([
-            'callback' => url()->previous(),
+            'callback' => url()->current(),
             'app_id' => $this->config['app_id']
         ]);
         return redirect($this->config['url'] . '/?' . $rawQuery);
