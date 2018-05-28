@@ -21,9 +21,9 @@ class LoginCheckerClient extends \Grpc\BaseStub {
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function check(\ZMDev\Fate\Pb\TicketID $argument,
+    public function Check(\ZMDev\Fate\Pb\TicketID $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.Fate.pb.LoginChecker/check',
+        return $this->_simpleRequest('/ZMDev.Fate.pb.LoginChecker/Check',
         $argument,
         ['\ZMDev\Fate\Pb\LoginCheckRes', 'decode'],
         $metadata, $options);
@@ -34,9 +34,9 @@ class LoginCheckerClient extends \Grpc\BaseStub {
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function logout(\ZMDev\Fate\Pb\TicketID $argument,
+    public function Logout(\ZMDev\Fate\Pb\TicketID $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/ZMDev.Fate.pb.LoginChecker/logout',
+        return $this->_simpleRequest('/ZMDev.Fate.pb.LoginChecker/Logout',
         $argument,
         ['\ZMDev\Fate\Pb\Unused', 'decode'],
         $metadata, $options);

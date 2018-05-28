@@ -14,9 +14,9 @@ service CertificateService {
 }
 
 service LoginChecker {
-    rpc check (TicketID) returns (LoginCheckRes) {
+    rpc Check (TicketID) returns (LoginCheckRes) {
     }
-    rpc logout (TicketID) returns (Unused) {
+    rpc Logout (TicketID) returns (Unused) {
     }
 }
 
