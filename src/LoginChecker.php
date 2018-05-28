@@ -3,15 +3,16 @@
 namespace ZMDev\FateSDK;
 
 use ZMDev\FateSDK\Exceptions\FateException;
-use ZMDev\FateSDK\Pb\LoginCheckerClient;
-use ZMDev\FateSDK\Pb\LoginCheckRes;
-use ZMDev\FateSDK\Pb\TicketID;
+use ZMDev\Fate\Pb\LoginCheckerClient;
+use ZMDev\Fate\Pb\LoginCheckRes;
+use ZMDev\Fate\Pb\TicketID;
 
 class LoginChecker
 {
     private $accessToken;
     private $config;
     private $client;
+    private $loginCheckRes = null;
 
     public function __construct(AccessToken $accessToken, array $config)
     {
@@ -24,19 +25,22 @@ class LoginChecker
 
     public function check($ticketID)
     {
-        $token = $this->accessToken->getToken();
-        $t = new TicketID();
-        $t->setId($ticketID);
-        /**
-         * @var $loginCheckRes LoginCheckRes
-         */
-        list($loginCheckRes, $status) = $this->client->check($t, [
-            $this->config['access_token_key'] => [$token],
-        ], ['timeout' => $this->config['rpc_timeout']])->wait();
-        if ($status->code != 0) {
-            throw new FateException($status->details);
+        if (is_null($this->loginCheckRes)) {
+            $token = $this->accessToken->getToken();
+            $t = new TicketID();
+            $t->setId($ticketID);
+            /**
+             * @var $loginCheckRes LoginCheckRes
+             */
+            list($loginCheckRes, $status) = $this->client->check($t, [
+                $this->config['access_token_key'] => [$token],
+            ], ['timeout' => $this->config['rpc_timeout']])->wait();
+            if ($status->code != 0) {
+                throw new FateException($status->details);
+            }
+            $this->loginCheckRes = $loginCheckRes;
         }
-        return $loginCheckRes->getIsLogin();
+        return $this->loginCheckRes;
     }
 
     public function logout($ticketID)

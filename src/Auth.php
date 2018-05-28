@@ -20,7 +20,7 @@ class Auth
         if (!isset($_COOKIE['ticket_id'])) {
             return true;
         }
-        return !$this->loginChecker->check($_COOKIE['ticket_id']);
+        return !$this->loginChecker->check($_COOKIE['ticket_id'])->getIsLogin();
     }
 
     public function login()

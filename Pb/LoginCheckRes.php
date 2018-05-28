@@ -17,6 +17,10 @@ class LoginCheckRes extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_login = 1;</code>
      */
     private $is_login = false;
+    /**
+     * Generated from protobuf field <code>int64 user_id = 2;</code>
+     */
+    private $user_id = 0;
 
     public function __construct() {
         \GPBMetadata\Api::initOnce();
@@ -41,6 +45,28 @@ class LoginCheckRes extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_login = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 user_id = 2;</code>
+     * @return int|string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 user_id = 2;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->user_id = $var;
 
         return $this;
     }
