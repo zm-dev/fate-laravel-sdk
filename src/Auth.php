@@ -2,8 +2,6 @@
 
 namespace ZMDev\FateSDK;
 
-use Illuminate\Http\Request;
-
 class Auth
 {
     private $config;
@@ -17,10 +15,10 @@ class Auth
 
     public function needLogin()
     {
-        if (!isset($_COOKIE['ticket_id'])) {
+        if (!isset($_COOKIE[$this->config['ticket_id_cookie_key']])) {
             return true;
         }
-        return !$this->loginChecker->check($_COOKIE['ticket_id'])->getIsLogin();
+        return !$this->loginChecker->check($_COOKIE[$this->config['ticket_id_cookie_key']])->getIsLogin();
     }
 
     public function login()
@@ -46,8 +44,9 @@ class Auth
 
     public function logout()
     {
-        if (isset($_COOKIE['ticket_id'])) {
-            $this->loginChecker->logout($_COOKIE['ticket_id']);
+        if (isset($_COOKIE[$this->config['ticket_id_cookie_key']])) {
+            $this->loginChecker->logout($_COOKIE[$this->config['ticket_id_cookie_key']]);
+            setcookie($this->config['ticket_id_cookie_key'], time() - 1);
         }
     }
 }
