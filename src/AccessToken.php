@@ -4,8 +4,8 @@ namespace ZMDev\FateSDK;
 
 use Psr\SimpleCache\CacheInterface;
 use ZMDev\FateSDK\Exceptions\FateException;
-use ZMDev\FateSDK\Pb\AccessTokenServiceClient;
-use ZMDev\FateSDK\Pb\Credential;
+use ZMDev\Fate\Pb\AccessTokenServiceClient;
+use ZMDev\Fate\Pb\Credential;
 
 class AccessToken
 {
