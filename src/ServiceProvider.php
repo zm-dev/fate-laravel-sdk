@@ -18,6 +18,8 @@ class ServiceProvider extends BaseServiceProvider
 
     public function register()
     {
+        $this->mergeConfigFrom(dirname(__DIR__) . '/config/fate.php', 'fate');
+
         $this->registerAccessToken();
 
         $this->registerLoginChecker();
