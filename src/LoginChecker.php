@@ -12,7 +12,7 @@ class LoginChecker
     private $accessToken;
     private $config;
     private $client;
-    private $loginCheckRes = null;
+    private $loginCheckRes = [];
 
     public function __construct(AccessToken $accessToken, array $config)
     {
@@ -25,7 +25,7 @@ class LoginChecker
 
     public function check($ticketID)
     {
-        if (is_null($this->loginCheckRes)) {
+        if (isset($this->loginCheckRes[$ticketID])) {
             $token = $this->accessToken->getToken();
             $t = new TicketID();
             $t->setId($ticketID);
@@ -38,9 +38,9 @@ class LoginChecker
             if ($status->code != 0) {
                 throw new FateException($status->details);
             }
-            $this->loginCheckRes = $loginCheckRes;
+            $this->loginCheckRes[$ticketID] = $loginCheckRes;
         }
-        return $this->loginCheckRes;
+        return $this->loginCheckRes[$ticketID];
     }
 
     public function logout($ticketID)

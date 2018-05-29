@@ -15,10 +15,7 @@ class Auth
 
     public function needLogin()
     {
-        if (!isset($_COOKIE[$this->config['ticket_id_cookie_key']])) {
-            return true;
-        }
-        return !$this->loginChecker->check($_COOKIE[$this->config['ticket_id_cookie_key']])->getIsLogin();
+        return !$this->check();
     }
 
     public function login()
@@ -48,5 +45,21 @@ class Auth
             $this->loginChecker->logout($_COOKIE[$this->config['ticket_id_cookie_key']]);
             setcookie($this->config['ticket_id_cookie_key'], time() - 1);
         }
+    }
+
+    public function check()
+    {
+        if (!isset($_COOKIE[$this->config['ticket_id_cookie_key']])) {
+            return false;
+        }
+        return $this->loginChecker->check($_COOKIE[$this->config['ticket_id_cookie_key']])->getIsLogin();
+    }
+
+    public function userID()
+    {
+        if (!isset($_COOKIE[$this->config['ticket_id_cookie_key']])) {
+            return 0;
+        }
+        return $this->loginChecker->check($_COOKIE[$this->config['ticket_id_cookie_key']])->getUserId();
     }
 }
