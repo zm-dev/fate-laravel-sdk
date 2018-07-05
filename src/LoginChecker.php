@@ -25,7 +25,7 @@ class LoginChecker
 
     public function check($ticketID)
     {
-        if (isset($this->loginCheckRes[$ticketID])) {
+        if (!isset($this->loginCheckRes[$ticketID])) {
             $token = $this->accessToken->getToken();
             $t = new TicketID();
             $t->setId($ticketID);
