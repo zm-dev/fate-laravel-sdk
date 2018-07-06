@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package ZMDev.Fate.pb;
+
+service AccessTokenService {
+    // 获取 access token
+    rpc Token (Credential) returns (AccessToken) {
+    }
+}
+
+service CertificateService {
+    rpc Update (CertificateUpdate) returns (Unused) {
+    }
+}
+
+service LoginChecker {
+    rpc Check (TicketID) returns (LoginCheckRes) {
+    }
+    rpc Logout (TicketID) returns (Unused) {
+    }
+}
+
+service UserService {
+    //todo update password
+    rpc UpdatePassword (UpdatePasswordMsg) returns (Unused) {
+    }
+    rpc Register (User) returns (UserID) {
+    }
+}
+
+
+message User {
+    string account = 1;
+    CertificateType certificate_type = 3;
+    string password = 2;
+}
+
+message UserID {
+    int64 id = 1;
+}
+
+message UpdatePasswordMsg {
+    int64 user_id = 1;
+    string new_password = 2;
+}
+
+message TicketID {
+    string id = 1;
+}
+
+//enum LoginState {
+//    LoggedIn = 0;
+//    NotLoggedIn = 1;
+//}
+
+message LoginCheckRes {
+    bool is_login = 1;
+    int64 user_id = 2;
+}
+
+message Unused {
+}
+
+message Credential {
+    int32 app_id = 1;
+    string app_secret = 2;
+}
+
+message AccessToken {
+    string token = 1;
+    int64 expired_at = 2;
+}
+
+enum CertificateType {
+    StudentNum = 0;
+    PhoneNum = 1;
+    Email = 2;
+}
+
+message CertificateUpdate {
+    // int64 id = 1;
+    // int64 user_id = 2;
+    string account = 1;
+    string newAccount = 2;
+    CertificateType certificate_type = 3;
+}
