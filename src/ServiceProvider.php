@@ -25,6 +25,8 @@ class ServiceProvider extends BaseServiceProvider
         $this->registerLoginChecker();
 
         $this->registerAuth();
+
+        $this->registerUserService();
     }
 
     public function registerAuth()
@@ -36,15 +38,22 @@ class ServiceProvider extends BaseServiceProvider
 
     public function registerAccessToken()
     {
-        $this->app->bind(AccessToken::class, function () {
+        $this->app->singleton(AccessToken::class, function () {
             return new AccessToken(config('fate'), cache()->driver());
         });
     }
 
     public function registerLoginChecker()
     {
-        $this->app->bind(LoginChecker::class, function ($app) {
+        $this->app->singleton(LoginChecker::class, function ($app) {
             return new LoginChecker($app->make(AccessToken::class), config('fate'));
+        });
+    }
+
+    public function registerUserService()
+    {
+        $this->app->singleton(UserService::class, function ($app) {
+            return new UserService($app->make(AccessToken::class), config('fate'));
         });
     }
 
