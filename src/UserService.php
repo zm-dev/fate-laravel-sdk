@@ -41,7 +41,7 @@ class UserService
         }
     }
 
-    public function Register($account, $certificateType, $password)
+    public function register($account, $certificateType, $password)
     {
         $token = $this->accessToken->getToken();
         $user = new User();
