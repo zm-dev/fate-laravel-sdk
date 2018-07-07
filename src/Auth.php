@@ -2,7 +2,7 @@
 
 namespace ZMDev\FateSDK;
 
-class Auth
+class Auth implements IAuth
 {
     private $config;
     private $loginChecker;

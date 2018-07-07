@@ -31,7 +31,7 @@ class ServiceProvider extends BaseServiceProvider
 
     public function registerAuth()
     {
-        $this->app->singleton(Auth::class, function ($app) {
+        $this->app->singleton(IAuth::class, function ($app) {
             return new Auth(config('fate'), $app->make(LoginChecker::class));
         });
     }
