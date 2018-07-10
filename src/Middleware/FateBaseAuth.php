@@ -2,7 +2,7 @@
 
 namespace ZMDev\FateSDK\Middleware;
 
-use ZMDev\FateSDK\Auth;
+use ZMDev\FateSDK\IAuth;
 
 class FateBaseAuth
 {
@@ -18,9 +18,9 @@ class FateBaseAuth
     public function handle($request, \Closure $next)
     {
         /**
-         * @var Auth $auth
+         * @var IAuth $auth
          */
-        $auth = app(Auth::class);
+        $auth = app(IAuth::class);
         if ($auth->needLogin()) {
             return $auth->login();
         }

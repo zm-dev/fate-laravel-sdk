@@ -7,7 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use ZMDev\FateSDK\Auth;
+use ZMDev\FateSDK\IAuth;
 
 class AuthController
 {
@@ -37,7 +37,7 @@ class AuthController
         $time = time() - 1;
         $rmCookieTicketID = new Cookie(config('fate.ticket_id_cookie_key'), null, $time);
         $rmCookieUserID = new Cookie(config('fate.user_id_cookie_key'), null, $time);
-        app(Auth::class)->logout();
+        app(IAuth::class)->logout();
         return (new RedirectResponse(url()->previous()))->withCookies([$rmCookieTicketID, $rmCookieUserID]);
     }
 }
