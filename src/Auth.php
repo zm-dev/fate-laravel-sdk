@@ -29,10 +29,10 @@ class Auth implements IAuth
         }
     }
 
-    public function redirectToLogin()
+    public function redirectToLogin($callback = '')
     {
         $rawQuery = http_build_query([
-            'callback' => url()->current(),
+            'callback' => $callback == '' ? url()->current() : $callback,
             'app_id' => $this->config['app_id']
         ]);
         return redirect($this->config['url'] . '/?' . $rawQuery);
